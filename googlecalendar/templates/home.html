@@ -4,13 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
     <title>Google Calendar</title>
 </head>
 <body>
-    <h1>Welcome to Google Calendar Event extractor</h1>
-    <button ><a href="/api/v1/calendar/init">Click to login</a></button>
+    <div class="container-2"><h2 align="center" style="color:rgb(46,90,235); font-size:35px; font-family:cursive;"><i>django - Calendar</i></h2></div>
+    <div class="container">
+        <div class="bgcolor-1">
+        <div class="image">
+            <img class="img-1"src="{% static 'google-calendar-gif.gif' %}">
+        </div>
+        
 
+        </div>
+        <div class="bgcolor-2">
+        <div class="text">
+            Welcome to <br><span class="multicolortext"> Google</span> Calendar events
+        </div>
+            <br>
+            <div class="login-box" >
+                <div class="icon-img">
+                    <a href="/api/v1/calendar/init"><img class="icon-img" src="{% static 'google-icon.gif' %}" alt="Google Icon"></a>
+                </div>
+                <a href="/api/v1/calendar/init"><button><span style="font-family:'Inter',sans-serif !important;" >Click to Login with Google</span></button></a>
+            </div>
     <br>
-    <footer>By Harsh Sharma</footer>  
+    <!-- <footer>By Harsh Sharma</footer> -->
+    </div>
+    <footer>Project By Harsh Sharma</footer>
+    </div>
 </body>
 </html>
