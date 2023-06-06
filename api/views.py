@@ -69,7 +69,7 @@ class GoogleCalendarRedirectView(View):
         # calendar_lists = service.calendarList().list().execute()
 
         events_result = service.events().list(calendarId='primary',orderBy='updated',
-                                              maxResults=10).execute()
+                                              ).execute()
 
         if not events_result['items']:
             print('no event')
@@ -80,8 +80,14 @@ class GoogleCalendarRedirectView(View):
         final = []
         for event in events:
             temp = {}
-            temp['date'] = event['start']
-            temp['summary'] = event['summary']
+            try:
+                temp['date'] = event['start']
+            except:
+                temp['date'] = None
+            try:
+                temp['summary'] = event['summary']
+            except:
+                temp['summary'] = None
             try: 
                 temp['location']= event['location']
             except:
